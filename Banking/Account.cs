@@ -13,29 +13,42 @@ namespace Banking {
 		private string Name = "Checking";
 		private int Number = 0;
 		// Methods go here
-		private bool IsAmountInvalid(double amount) {
-			if(amount > 0) { // this is good
+
+		public bool Transfer(double Amount, Account ToAccount) {
+			if(Withdraw(Amount)) {
+				ToAccount.Deposit(Amount);
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		private bool IsAmountInvalid(double Amount) {
+			if(Amount > 0) { // this is good
 				return false;
 			} else { // this is bad
 				return true;
 			}
 		}
-		public void Deposit(double amount) {
+		public bool Deposit(double amount) {
 			if(IsAmountInvalid(amount)) { // this is bad
 				Console.WriteLine("Amount must be > zero.");
-				return;
+				return false;
 			}
 			Balance += amount;
+			return true;
 		}
-		public void Withdraw(double amount) {
+		public bool Withdraw(double amount) {
 			if (IsAmountInvalid(amount)) { // this is bad
 				Console.WriteLine("Amount must be > zero.");
-				return;
+				return false;
 			}
 			if (amount > CheckBalance()) {
 				Console.WriteLine("Insufficient funds.");
+				return false;
 			} else {
 				Balance -= amount;
+				return true;
 			}
 		}
 		public double CheckBalance() {
