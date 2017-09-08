@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banking {
+namespace Banking { 
 	class Account {
 		// Properties go here
 		private double Balance = 0;
