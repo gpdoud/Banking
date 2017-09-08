@@ -4,9 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banking { 
-	class Account {
+namespace MaxTechnicalTraining { 
+
+	/// <summary>
+	/// The account class simulates an account at a bank
+	/// 
+	/// </summary>
+	public class Account {
 		// Properties go here
+		/// <summary>
+		/// Contains the value of the next instance account number
+		/// </summary>
 		private static int nextAccountNumber = 96434;
 		private const int incrementAccountNumber = 74747;
 		private double Balance = 0;
@@ -30,6 +38,11 @@ namespace Banking {
 				return true;
 			}
 		}
+		/// <summary>
+		/// Adds money into an account
+		/// </summary>
+		/// <param name="amount">The money to deposit</param>
+		/// <returns>Returns true if deposit is successful; otherwise false</returns>
 		public bool Deposit(double amount) {
 			if(IsAmountInvalid(amount)) { // this is bad
 				Console.WriteLine("Amount must be > zero.");

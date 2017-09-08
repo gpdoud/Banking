@@ -3,11 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaxTechnicalTraining;
 
 namespace Banking {  
 	class Program {
 		// Run method pushed up to GitHub
-		void Run() {
+
+		int IncrementValue(int nbr) {
+			Console.WriteLine($"The before value of anInt is {nbr}");
+			nbr++;
+			Console.WriteLine($"The after value of anInt is {nbr}");
+			return nbr;
+		}
+
+		void Run() { 
+			int anInt = 1;
+			object obj = "ABC";
+			
+		}
+
+		void TestAccount() { 
 			Account checking = new Account();
 			checking.SetName("Checking 1");
 			checking.Withdraw(100.00);
@@ -35,7 +50,7 @@ namespace Banking {
 		}
 
 		static void Main(string[] args) {
-			new Program().Run();
+			new Program().TestAccount();
 		}
 	}
 }
