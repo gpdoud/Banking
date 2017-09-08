@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Banking {  
 	class Program {
-
+		// Run method pushed up to GitHub
 		void Run() {
 			Account checking = new Account();
 			checking.SetName("Checking 1");
