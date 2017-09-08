@@ -11,10 +11,25 @@ namespace Banking {
 		private string Name = "Checking";
 		private int Number = 0;
 		// Methods go here
+		private bool IsAmountInvalid(double amount) {
+			if(amount > 0) { // this is good
+				return false;
+			} else { // this is bad
+				return true;
+			}
+		}
 		public void Deposit(double amount) {
+			if(IsAmountInvalid(amount)) { // this is bad
+				Console.WriteLine("Amount must be > zero.");
+				return;
+			}
 			Balance += amount;
 		}
 		public void Withdraw(double amount) {
+			if (IsAmountInvalid(amount)) { // this is bad
+				Console.WriteLine("Amount must be > zero.");
+				return;
+			}
 			if (amount > CheckBalance()) {
 				Console.WriteLine("Insufficient funds.");
 			} else {
