@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaxTechnicalTraining { 
+namespace MaxTechnicalTraining.BankingLibrary { 
 
 	/// <summary>
 	/// The account class simulates an account at a bank

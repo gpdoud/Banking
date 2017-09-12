@@ -3,24 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MaxTechnicalTraining;
+using MaxTechnicalTraining.BankingLibrary;
 
 namespace Banking {  
 	class Program {
 		// Run method pushed up to GitHub
-
-		int IncrementValue(int nbr) {
-			Console.WriteLine($"The before value of anInt is {nbr}");
-			nbr++;
-			Console.WriteLine($"The after value of anInt is {nbr}");
-			return nbr;
-		}
-
-		void Run() { 
-			int anInt = 1;
-			object obj = "ABC";
-			
-		}
 
 		void TestAccount() { 
 			Account checking = new Account();
@@ -29,7 +16,8 @@ namespace Banking {
 			checking.Deposit(50.00);
 			checking.Deposit(-100.00);
 			Console.WriteLine($"Account Nbr:{checking.getNumber()}, Name: {checking.GetName()}, balance is {checking.CheckBalance()}");
-			Account savings = new Account("My Savings Account");
+			Savings savings = new Savings("My Savings Account");
+			savings.IntRate = 0.10;
 			savings.Deposit(70.00);
 			Console.WriteLine($"Account Nbr:{savings.getNumber()}, Name: {savings.GetName()}, balance is {savings.CheckBalance()}");
 
@@ -47,6 +35,12 @@ namespace Banking {
 
 			Console.WriteLine($"Account Nbr:{checking.getNumber()}, Name: {checking.GetName()}, balance is {checking.CheckBalance()}");
 			Console.WriteLine($"Account Nbr:{savings.getNumber()}, Name: {savings.GetName()}, balance is {savings.CheckBalance()}");
+
+			savings.PayMonthlyInterest();
+
+			Console.WriteLine($"Savings Nbr:{savings.getNumber()}, Name: {savings.GetName()}, balance is {savings.CheckBalance()}");
+
+			Savings sav1 = new Savings("Greg's Savings with Interest", 0.05);
 		}
 
 		static void Main(string[] args) {
