@@ -12,6 +12,7 @@ namespace MaxTechnicalTraining.BankingLibrary {
 	/// </summary>
 	public class Account {
 		// Properties go here
+		private string a = "a";
 		/// <summary>
 		/// Contains the value of the next instance account number
 		/// </summary>
